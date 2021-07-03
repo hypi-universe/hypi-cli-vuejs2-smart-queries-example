@@ -1,4 +1,4 @@
-mutation upsert($values:HypiUpsertInputUnion!) {
+mutation updateProducts($values:HypiUpsertInputUnion!) {
   upsert(values:$values)
     {
         id

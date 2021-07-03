@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Products from '../views/Products.vue';
+import AddProduct from '../views/AddProduct.vue';
+import EditProduct from '../views/EditProduct.vue';
 
 Vue.use(VueRouter);
 
@@ -12,13 +14,13 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/add',
-    name: 'Add Product',
-    component: () => import('../views/About.vue'),
+    name: 'AddProduct',
+    component: AddProduct,
   },
   {
-    path: '/products/:id',
-    name: 'Edit Product',
-    component: () => import('../views/About.vue'),
+    path: '/edit/:id',
+    name: 'EditProduct',
+    component: EditProduct,
   },
 ];
 

@@ -1,10 +1,15 @@
+import * as fs from 'fs-extra';
 // get default_api_domain from ~/.config/hypi/config.json
 // get domain from instance.yaml
 // get token from ~/.config/hypi/config.json
+
+// const configFilePath = '/home/eman/.config/hypi';
+// const userConfig = fs.readJSON(configFilePath).then().catch((e) => console.log(e));
+
 const data = {
-  default_api_domain: 'https://api.alpha.hypi.dev',
-  domain: 'horrible.apps.hypi.app',
-  token: 'eyJhbGciOiJSUzI1NiJ9.eyJoeXBpLmxvZ2luIjp0cnVlLCJoeXBpLnVzZXJuYW1lIjoiZW1hbi5jc2UyMDA4QGdtYWlsLmNvbSIsImh5cGkuZW1haWwiOiJlbWFuLmNzZTIwMDhAZ21haWwuY29tIiwiYXVkIjoiMDFGOEhRNEFFVDA0N1lWRUZBNUZNNVo2M1giLCJpYXQiOjE2MjQwOTIzMjgsImV4cCI6MTYyNjY4NDMyOCwic3ViIjoiMDFGOEhRNEFFVEc5UkE5WE1aWVc5NzlZQzMiLCJuYmYiOjE2MjQwOTIzMjh9.lZec5FG29w0ZNGO_gpFG-Es_Qq_ZAw_cZ2ue0vOq18lTN-BKr80AFnBZrSpGQ3CqiPv1aSe7uAmHboPb2StoUGAYAQvgBsYgQqXe_vbN1iVBJyDtCC1NzUzvAj4bVRXJt1fQHLib7ubmBrJ69Rj47sItPliXGid6AXJtv25_dgBQ_ld22mqBy4i6Tbrb_tFSQUfVHU_T5rrsBtRil2pEzGRdmaKp6Q5FU9lkUYt1Wt106hinU2lM3RV1OkJM2cYmJInLzrX2UlyBYU9yUkFlQv0ejIffyaAAtYSYZovRxL1BpvHfD3n6iCmQc2pI34r1h0hFj6Bmn6_JTZfzFBErGg',
+  default_api_domain: 'https://api.hypi.app',
+  domain: 'hubcaps.apps.hypi.app',
+  token: 'eyJhbGciOiJSUzI1NiJ9.eyJoeXBpLmxvZ2luIjp0cnVlLCJoeXBpLnVzZXJuYW1lIjoiZW1hbi5jc2UyMDA4QGdtYWlsLmNvbSIsImh5cGkuZW1haWwiOiJlbWFuLmNzZTIwMDhAZ21haWwuY29tIiwiYXVkIjoiMDFGMkdaQkpLSDZSM1RDNkVKRFJFNU5IRzQiLCJpYXQiOjE2MjM5NDQ2MjcsImV4cCI6MTYyNjUzNjYyNywic3ViIjoiMDFGMkdaQkpLQUgxSkNDQlZaUzI0TVQ3VlIiLCJuYmYiOjE2MjM5NDQ2Mjd9.3_4XDk5woGhB-Fmg8Ur2-V0109q1blfCHgQR2eH4mlThnyzLAUh945A1laWVzunj7UesfHFqyfnb-M3nbSJ6ht8J4ly2xvB2eT4VN8_nZhEuFBdiK2RcauRf4fMn4L4J_JSAwQtge3wAZ3zXkSAU4r0dBVZ3F5cOrG_e5CDDwxfA0zNWnCXKZy5WNXFEeVMzLKovu3MfWdXLRKlhAonXUz4d5kOZfmxhTFNzf1TVCBgM1m_u7tatB_lEq31zHM8-ajYF9v8UkzpYG-WvyiOhBMv-j8Vh0Wdf0XmuOnc7A4thQ1Mu_HOoERSh6X8qEYYoGoh6_ADbBSEbWDzwQgs2Ag',
 };
 
 export default data;
