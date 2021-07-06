@@ -50,6 +50,7 @@
 </template>
 
 <script lang="ts">
+
 import { useProductsQuery, deleteMutation } from '../generated/graphql';
 
 export default {
@@ -69,8 +70,8 @@ export default {
     };
   },
   methods: {
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    async removeProduct(productId) {
+    async removeProduct(productId): Promise<void> {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { success, data, errors } = await deleteMutation(
         this,
         {
@@ -81,6 +82,7 @@ export default {
         this.$apollo,
       );
       if (errors) {
+        // eslint-disable-next-line no-alert
         alert('Failed to delete message');
       }
       if (success) {

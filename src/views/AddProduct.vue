@@ -49,9 +49,10 @@
 
 <script lang='ts'>
 import { updateProductsMutation } from '../generated/graphql';
+import IProduct from '../interfaces/product.interface';
 
 export default {
-  data(): { title: string, description: string, price: number} {
+  data(): IProduct {
     return {
       title: '',
       description: '',
@@ -59,13 +60,12 @@ export default {
     };
   },
   methods: {
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    async addProduct() {
+    async addProduct(): Promise<void> {
       const productTitle = this.title.trim();
       const productDescription = this.description.trim();
       const productPrice = this.price;
 
-      const { success, data, errors } = await updateProductsMutation(
+      const { success, errors } = await updateProductsMutation(
         this,
         {
           variables: {
@@ -83,7 +83,8 @@ export default {
         this.$apollo,
       );
       if (errors) {
-        alert('Failed to create message');
+        // eslint-disable-next-line no-alert
+        alert('Failed to create product');
       }
       if (success) {
         this.$router.push({ name: 'Products' });
