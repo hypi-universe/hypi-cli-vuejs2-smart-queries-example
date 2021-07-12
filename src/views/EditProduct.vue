@@ -68,7 +68,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script>
 import {
   GetProductDocument,
   updateProductsMutation,
@@ -79,16 +79,19 @@ export default {
   apollo: {
     product: {
       query: GetProductDocument,
+      // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
       variables() {
         return {
           id: this.$route.params.id,
         };
       },
       loadingKey: 'loading',
+      // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
       update: (data) => data.get,
     },
   },
-  data(): { productId: string; product: IProduct; loading: number; } {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  data() {
     return {
       productId: this.$route.params.id,
       product: { title: '', description: '', price: 0 },
@@ -96,7 +99,8 @@ export default {
     };
   },
   methods: {
-    async editProduct(product: IProduct): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    async editProduct(product) {
       const { success, data, errors } = await updateProductsMutation(
         this,
         {

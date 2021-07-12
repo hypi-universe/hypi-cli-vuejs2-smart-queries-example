@@ -47,12 +47,12 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script>
 import { updateProductsMutation } from '../generated/graphql';
-import IProduct from '../interfaces/product.interface';
 
 export default {
-  data(): IProduct {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  data() {
     return {
       title: '',
       description: '',
@@ -60,7 +60,8 @@ export default {
     };
   },
   methods: {
-    async addProduct(): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    async addProduct() {
       const productTitle = this.title.trim();
       const productDescription = this.description.trim();
       const productPrice = this.price;

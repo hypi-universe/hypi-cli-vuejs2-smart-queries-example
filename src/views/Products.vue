@@ -49,7 +49,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 
 import { useProductsQuery, deleteMutation } from '../generated/graphql';
 
@@ -63,14 +63,16 @@ export default {
       update: (data) => data.find.edges,
     }),
   },
-  data(): Record<string, unknown> {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  data() {
     return {
       products: null,
       loading: 0,
     };
   },
   methods: {
-    async removeProduct(productId): Promise<void> {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    async removeProduct(productId) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { success, data, errors } = await deleteMutation(
         this,
